@@ -17,7 +17,7 @@ st.markdown("""
 st.markdown("""
 <div class="hero">
   <h1>🖥️ Monitor Recommender</h1>
-  <p>ชื่อ: ตอง | รหัส: xxxxxxxx | วิชา: xxxxx</p>
+  <p>นายเกริกยศโกลากุล | 664245017 | 66/43
 </div>
 """, unsafe_allow_html=True)
 
