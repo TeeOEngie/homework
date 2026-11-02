@@ -1,23 +1,43 @@
+import base64
 import streamlit as st
 
 st.set_page_config(page_title="Monitor Recommender", page_icon="🖥️", layout="centered")
+
+# แปลงรูปเป็นข้อความ จะได้ฝังใน html ได้
+def get_img(path):
+    try:
+        with open(path, "rb") as f:
+            return base64.b64encode(f.read()).decode()
+    except FileNotFoundError:
+        return ""
+
+img = get_img("image.png")
 
 # สไตล์หัวเว็บกับเลขงาน
 st.markdown("""
 <style>
 .hero { background: linear-gradient(120deg, #0f766e, #2563eb); border-radius: 16px;
-  padding: 40px 32px; margin-bottom: 28px; }
+  padding: 32px; margin-bottom: 28px; display: flex; align-items: center;
+  justify-content: space-between; gap: 20px; }
 .hero h1 { color: #fff; margin: 0; font-size: 34px; }
 .hero p { color: #dbeafe; margin: 8px 0 0; }
+.hero img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  border: 4px solid #fff; }
 .num { font-size: 38px; font-weight: 800; color: #2563eb; line-height: 1; }
 </style>
 """, unsafe_allow_html=True)
 
+# ถ้ามีรูปค่อยโชว์
+pic = f'<img src="data:image/png;base64,{img}">' if img else ""
+
 # หัวเว็บ
-st.markdown("""
+st.markdown(f"""
 <div class="hero">
-  <h1>🖥️ Monitor Recommender</h1>
-  <p>นายเกริกยศโกลากุล | 664245017 | 66/43
+  <div>
+    <h1>🖥️ Monitor Recommender</h1>
+    <p>นายเกริกยศโกลากุล | 664245017 | 66/43</p>
+  </div>
+  {pic}
 </div>
 """, unsafe_allow_html=True)
 
