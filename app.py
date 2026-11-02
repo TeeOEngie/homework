@@ -1,4 +1,3 @@
-import base64
 import streamlit as st
 
 st.set_page_config(page_title="Monitor Recommender", page_icon="🖥️", layout="centered")
@@ -46,22 +45,13 @@ for n, title, desc, btn, link in works:
         c2.markdown(f"**{title}**  \n{desc}")
         c3.link_button(btn, link, use_container_width=True)
 
-# ส่วน pdf
+# ส่วน pdf (ปุ่มโหลดอย่างเดียว)
 st.write("")
 st.subheader("📄 เอกสารประกอบ")
 try:
     with open("pdf/monitor017pdf.pdf", "rb") as f:
         data = f.read()
-
-    # ปุ่มโหลด
     st.download_button("โหลด PDF", data, file_name="monitor017pdf.pdf",
                        mime="application/pdf")
-
-    # โชว์ pdf ในหน้าเว็บ
-    b64 = base64.b64encode(data).decode()
-    st.markdown(
-        f'<iframe src="data:application/pdf;base64,{b64}" width="100%" height="700"></iframe>',
-        unsafe_allow_html=True,
-    )
 except FileNotFoundError:
     st.warning("ยังไม่มีไฟล์ PDF")
