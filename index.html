@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monitor Recommender</title>
+<style>
+  /* สีหลัก แก้ตรงนี้ที่เดียว */
+  :root { --c1: #0f766e; --c2: #2563eb; --bg: #f1f5f9; --text: #0f172a; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background: var(--bg); color: var(--text); }
+
+  /* หัวเว็บ */
+  header { background: linear-gradient(120deg, var(--c1), var(--c2)); color: #fff; padding: 40px 20px; }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  .head { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  header h1 { margin: 0; font-size: 34px; }
+  header p { margin: 8px 0 0; color: #dbeafe; }
+  header img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; }
+
+  /* ส่วนงาน */
+  main { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+  h2 { margin: 30px 0 14px; }
+  .work { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 18px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .num { font-size: 36px; font-weight: 800; color: var(--c2); width: 56px; }
+  .info { flex: 1; }
+  .info h3 { margin: 0 0 4px; font-size: 18px; }
+  .info p { margin: 0; color: #475569; font-size: 14px; }
+  .tag { display: inline-block; font-size: 12px; background: #e0f2fe; color: #0369a1;
+    padding: 2px 8px; border-radius: 10px; margin-bottom: 6px; }
+
+  /* ปุ่ม */
+  .btn { display: inline-block; background: var(--c2); color: #fff; text-decoration: none;
+    padding: 10px 18px; border-radius: 8px; font-weight: 600; white-space: nowrap; }
+  .btn:hover { background: var(--c1); }
+
+  footer { text-align: center; color: #64748b; font-size: 13px; padding: 30px 0; }
+
+  /* มือถือ */
+  @media (max-width: 640px) {
+    .head { flex-direction: column-reverse; text-align: center; }
+    .work { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <div>
+      <h1>🖥️ Monitor Recommender</h1>
+      <p>นายเกริกยศโกลากุล | 664245017 | 66/43</p>
+    </div>
+    <img src="image.png" alt="รูปโปรไฟล์">
+  </div>
+</header>
+
+<main>
+  <h2>ผลงาน</h2>
+
+  <!-- งาน 1 -->
+  <div class="work">
+    <div class="num">01</div>
+    <div class="info">
+      <span class="tag">Notebook</span>
+      <h3>Monitor & User Database</h3>
+      <p>จัดการข้อมูลจอมอนิเตอร์และผู้ใช้งาน</p>
+    </div>
+    <a class="btn" target="_blank"
+       href="https://colab.research.google.com/github/TeeOEngie/homework/blob/main/Monitor_Recommender_System_017.ipynb">เปิดใน Colab</a>
+  </div>
+
+  <!-- งาน 2 -->
+  <div class="work">
+    <div class="num">02</div>
+    <div class="info">
+      <span class="tag">Notebook</span>
+      <h3>User Relationship Analysis</h3>
+      <p>วิเคราะห์ความสัมพันธ์ระหว่างผู้ใช้งานกับจอที่เลือก</p>
+    </div>
+    <a class="btn" target="_blank"
+       href="https://colab.research.google.com/github/TeeOEngie/homework/blob/main/Mornitor017.ipynb">เปิดใน Colab</a>
+  </div>
+
+  <!-- งาน 3 -->
+  <div class="work">
+    <div class="num">03</div>
+    <div class="info">
+      <span class="tag">Web App</span>
+      <h3>Monitor Recommendation System</h3>
+      <p>แนะนำจอมอนิเตอร์ให้ผู้ใช้งาน</p>
+    </div>
+    <a class="btn" target="_blank"
+       href="https://e3pwjlm3ekaf6qbrgxljis.streamlit.app/">เปิดเว็บไซต์</a>
+  </div>
+
+  <h2>เอกสารประกอบ</h2>
+  <div class="work">
+    <div class="num">📄</div>
+    <div class="info">
+      <h3>รายงาน PDF</h3>
+      <p>เปิดดูหรือโหลดเอกสารประกอบ</p>
+    </div>
+    <a class="btn" target="_blank" href="pdf/monitor017pdf.pdf">เปิด PDF</a>
+  </div>
+</main>
+
+<footer>Monitor Recommender © 2026</footer>
+
+</body>
+</html>
